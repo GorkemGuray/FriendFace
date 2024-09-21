@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct TagView: View {
+    let labelText: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(labelText)
+            .font(.caption)
+            .padding(.horizontal,12)
+            .padding(.vertical,6)
+            .foregroundStyle(.blue)
+            .background(.white)
+            .clipShape(.rect(cornerRadius: 20))
+            .lineLimit(1)
+            .overlay(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.blue, lineWidth: 1.5)
+            )
     }
 }
 
 #Preview {
-    TagView()
+    TagView(labelText: "Test Tag")
 }

@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Friends: Codable, Hashable {
+    var id: UUID
+    var name: String
+}
